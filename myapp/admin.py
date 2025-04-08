@@ -1,10 +1,8 @@
 from django.contrib import admin
 from django.shortcuts import get_object_or_404
 
-# Register your models here.
 from .models import Article, ArticleImage, Category
 from .forms import ArticleImageForm
-
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('category', 'slug')
@@ -15,9 +13,7 @@ class CategoryAdmin(admin.ModelAdmin):
         }),
     )
 
-
 admin.site.register(Category, CategoryAdmin)
-
 
 class ArticleImageInline(admin.TabularInline):
     model = ArticleImage
@@ -28,7 +24,6 @@ class ArticleImageInline(admin.TabularInline):
             'fields': ('title', 'image',),
         }),
     )
-
 
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'pub_date', 'slug', 'main_page')
@@ -51,6 +46,5 @@ class ArticleAdmin(admin.ModelAdmin):
         '''Delete an image.'''
         obj = get_object_or_404(ArticleImage, pk=pk)
         return obj.delete()
-
 
 admin.site.register(Article, ArticleAdmin)
