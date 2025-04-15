@@ -1,12 +1,16 @@
+# -*- coding: utf-8 -*-
 from django.utils import timezone
 from django.db import models
 from django.urls import reverse
 
-
-# Create your models here.
 class Category(models.Model):
-    category = models.CharField(u'Категорія', max_length=250, help_text=u'Максимум 250 символів')
+    category = models.CharField(
+        u'Категорія',
+        max_length=250,
+        help_text=u'Максимум 250 сим.'
+    )
     slug = models.SlugField(u'Слаг')
+    objects = models.Manager()
 
     class Meta:
         verbose_name = u'Категорія для публікації'
@@ -15,6 +19,15 @@ class Category(models.Model):
     def __str__(self):
         return self.category
 
+    def get_absolute_url(self):
+        try:
+            url = reverse(
+                'articles-category-list',
+                kwargs={'slug': self.slug}
+            )
+        except:
+            url = "/"
+        return url
 
 class Article(models.Model):
     title = models.CharField(u'Заголовок', max_length=250, help_text=u'Максимум 250 сим.')
@@ -22,19 +35,19 @@ class Article(models.Model):
     pub_date = models.DateTimeField(u'Дата публікації', default=timezone.now)
     slug = models.SlugField(u'Слаг', unique_for_date='pub_date')
     main_page = models.BooleanField(
-        u'Головна',
-        default=True,
-        help_text=u'Показувати на головній сторінці'
-    )
+    u'Головна',
+    default=True,
+    help_text=u'Показувати на головній сторінці'
+)
 
     category = models.ForeignKey(
-        Category,
-        related_name='articles',
-        blank=True,
-        null=True,
-        verbose_name=u'Категорія',
-        on_delete=models.CASCADE
-    )
+    Category,
+    related_name='articles',
+    blank=True,
+    null=True,
+    verbose_name=u'Категорія',
+    on_delete=models.CASCADE
+)
 
     objects = models.Manager()
 
@@ -42,6 +55,7 @@ class Article(models.Model):
         ordering = ['-pub_date']
         verbose_name = u'Статя'
         verbose_name_plural = u'Статті'
+
 
     def __str__(self):
         return self.title
@@ -57,7 +71,6 @@ class Article(models.Model):
         except:
             url = "/"
         return url
-
 
 class ArticleImage(models.Model):
     article = models.ForeignKey(Article, verbose_name=u'Стаття', related_name='images', on_delete=models.CASCADE)

@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="166d9c42-ad81-479b-97d6-b7a07381a198" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/myapp/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/migrations/0002_alter_article_options_alter_article_category_and_more.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoProjectKPZ/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProjectKPZ/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/article_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/articles_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/fotorama.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoProjectKPZ/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProjectKPZ/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -112,7 +116,7 @@
       <workItem from="1744097514374" duration="3517000" />
       <workItem from="1744698235520" duration="1305000" />
       <workItem from="1744706569458" duration="2483000" />
-      <workItem from="1744709134592" duration="3887000" />
+      <workItem from="1744709134592" duration="4221000" />
     </task>
     <servers />
   </component>
